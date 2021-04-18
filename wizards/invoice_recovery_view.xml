@@ -1,0 +1,38 @@
+<odoo>
+
+    <record id="account_invoice_recovery_form" model="ir.ui.view">
+        <field name="name">account.invoice.recovery.form</field>
+        <field name="model">account.invoice.recovery</field>
+        <field name="arch" type="xml">
+            <form string="Recovery Invoice">
+                <sheet>
+                  <field name="company_id" invisible="1"/> 
+                    <group>
+
+                        <field name="journal_id"/>    
+                        <field name="documento_id"/>
+                        <field name="number"/>   
+                        
+                    </group>
+
+                    <footer>
+                        <button string="Confirmar" name="confirm" type="object" class="btn-primary"/>
+                        <button string="Cancelar" class="btn-default" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_invoice_recovery_action" model="ir.actions.act_window">
+        <field name="name">Recovery Invoice</field>
+        <field name="res_model">account.invoice.recovery</field>
+        <field name="view_mode">form</field>
+        <field name="view_type">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="account_recovery_menu" parent="account.menu_finance_entries_actions" 
+                action="account_invoice_recovery_action" sequence="100"/>
+
+</odoo>

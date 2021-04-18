@@ -1,0 +1,16 @@
+<odoo>
+
+    <record id = "custom_pop_message_wizard_view_form" model = "ir.ui.view">
+            <field name = "name">msg.box.form</field>
+            <field name = "model">msg.box</field>
+            <field name = "arch" type = "xml">
+                <form string = "Mensaje">
+                    <field name = "message" readonly = "1" />
+                    <footer>
+                       <button string = "Cerrar" class = "btn-default" special = "cancel" />
+                    </footer>
+               </form>
+            </field>
+    </record>
+
+</odoo>
